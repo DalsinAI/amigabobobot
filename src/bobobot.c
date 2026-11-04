@@ -51,6 +51,15 @@
 #include "randnum.h"
 #include "text.h"
 
+#ifdef __amigaos__
+/* The data is in PROGDIR: (DATA, from amiga/Makefile.amigaos), which takes
+   no "/" after it; the frame clock is acsdl12's (amiga/xsdl). */
+#define DATA_SEP ""
+#include "xsdl_time.h"
+#else
+#define DATA_SEP "/"
+#endif
+
 #ifdef SOUND_YES
 #define SOUND
 #endif
@@ -1156,6 +1165,11 @@ int main(int argc, char * argv[])
 #ifdef SOUND
   fprintf(stderr, "(Using sound...");
   
+#ifdef __amigaos__
+  /* AHI and the screen are not given back at exit unless SDL_Quit runs,
+     and BoboBot exits by exit() on any missing file. */
+  atexit(SDL_Quit);
+#endif
   if (SDL_Init(SDL_INIT_AUDIO) < 0)
     {
       fprintf(stderr, "Couldn't initialize SDL sound.\n%s\n",
@@ -1176,7 +1190,7 @@ int main(int argc, char * argv[])
       /* (Load sound files): */
       for (i = 0; i < NUM_SOUNDS; i++)
 	{
-	  sprintf(temp, "%s/sounds/%s.wav", DATA, sound_names[i]);
+	  sprintf(temp, "%s" DATA_SEP "sounds/%s.wav", DATA, sound_names[i]);
 	  samples[i] = Mix_LoadWAV(temp);
 	  if (samples[i] == NULL)
 	    {
@@ -1194,7 +1208,7 @@ int main(int argc, char * argv[])
       /* (Load mod files): */
       for (i = 0; i < NUM_MODS; i++)
 	{
-	  sprintf(temp, "%s/mods/%s.mod", DATA, music_names[i]);
+	  sprintf(temp, "%s" DATA_SEP "mods/%s.mod", DATA, music_names[i]);
 	  songs[i] = Mix_LoadMUS(temp);
 	  if (songs[i] == NULL)
 	    {
@@ -5716,6 +5730,10 @@ void setup(int argc, char * argv[])
   
   /* Display: */
   
+#ifdef __amigaos__
+  /* No X server: the display is the Amiga's own screen. */
+  strcpy(server, "amiga");
+#else
   if (argc == 1 || argv[argc - 1][0] == '-')
     {
       if (getenv("DISPLAY") != NULL)
@@ -5733,6 +5751,7 @@ void setup(int argc, char * argv[])
     {
       strcpy(server, argv[argc - 1]);
     }
+#endif
 }
 
 
@@ -5964,7 +5983,7 @@ void Xsetup(void)
   
   /* Load dark XBM: */
   
-  sprintf(filename, "%s/images/dark.xbm", DATA);
+  sprintf(filename, "%s" DATA_SEP "images/dark.xbm", DATA);
   
   ret = XReadBitmapFile(display, window, filename,
 			&dark_width, &dark_height,
@@ -6402,7 +6421,7 @@ void loadobject(int i)
   
   fi = NULL;
   
-  sprintf(file, "%s/images/%s.ppm", DATA, object_names[i]);
+  sprintf(file, "%s" DATA_SEP "images/%s.ppm", DATA, object_names[i]);
   
   fi = fopen(file, "r");
   if (fi == NULL)
@@ -6620,7 +6639,7 @@ void initlevel(void)
   
   /* Open level file: */
   
-  sprintf(filename, "%s/levels/level%d.dat", DATA, level);
+  sprintf(filename, "%s" DATA_SEP "levels/level%d.dat", DATA, level);
   
   fi = fopen(filename, "r");
   
