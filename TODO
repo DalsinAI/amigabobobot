@@ -1,0 +1,13 @@
+TODO for BoboBot
+2000.Nov.30
+
+* Convert to SDL
+
+* Fix volumes of:
+    music!
+    explode sfx
+    robofly sfx
+    drip sfx
+    fuse sfx
+    armadillo sfx
+    die

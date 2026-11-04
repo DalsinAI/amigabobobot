@@ -1,0 +1,524 @@
+<html><head><title>BoboBot Documentation</title></head>
+<body bgcolor="#000000" background="background.gif" text="#FFFFFF"
+link="#8888FF" vlink="#FF8888" alink="#00FF00">
+
+<table border=0 cellspacing=0 cellpadding=0 align=center width=600><tr><td>
+<font face="Arial,Helvetica">
+
+<center>
+<h1>BoboBot<br>
+Documentation</h1>
+
+<b><a href="../COPYRIGHT">(c) 1998-2000 New Breed Software</a></b><br>
+by Bill Kendrick, Marianne Waage & Melissa Hardenbrook
+</center><p>
+
+<hr><p>
+
+<h3>WHAT IS BOBOBOT?</h3>
+<blockquote>
+  <img src="bobo.gif" width=32 height=32 alt="" align=right>
+  BoboBot is a multi-level one-player action game starring "BoboBot,"
+  the robo-monkey.  It's played with the keyboard, or optionally with a
+  joystick, uses Xlib to display graphics, and optionally uses
+  Sam Lantinga's "Simple Direct-Media Layer" to play music and sound.
+</blockquote><p><br clear=all>
+
+<h3>THE STORY</h3>
+<blockquote>
+  <img src="globe.gif" width=56 height=60 alt="" align=right>
+  An evil force has begun taking control of Earth, and it's your job to
+  stop it.  To do this, you must travel the globe and defeat eight evil
+  bosses to get access to the evil force, wherever it is hiding.
+  As you defeat these bosses, you also gain special weapons and abilities.
+</blockquote>
+
+<h3>REQUIREMENTS</h3>
+<blockquote>
+  BoboBot is for X-Window.  You need a UNIX system to compile the source
+  code and run the program.  You need an X display (a Linux box, a UNIX
+  workstation, or an X-Window server for a PC or Mac) to see the game and
+  interact.<p>
+
+  You need a Linux system to play with joystick and/or sound and music.<p>
+
+  BoboBot was developed under RedHad Linux on a 133MHz Pentium PC with
+  16MB and later with 64MB RAM.  A generic game pad controller and
+  a 16bit Sound Blaster sound and game card were used during development.<p>
+
+  To compile BoboBot, you'll need a C compiler ("gcc" was used during
+  development, and is recommended), and "make".  Xlib needs to be installed,
+  of course.  A joystick driver and the SDL (Simple Directlayer Media) library
+  are required for joystick and sound.<p>
+</blockquote>
+
+<h3>INSTALLATION</h3>
+<blockquote>
+  <h4>Compiling</h4>
+  <blockquote>
+    See the <a href="../INSTALL">INSTALL</a> file.<p>
+  </blockquote>
+
+  <h4>Where Do I Get The Libraries?</h4>
+  <blockquote>
+    Vojtech Pavlik's excellent Linux Joystick Driver can be downloaded from:<p>
+
+    <blockquote>
+      <a href="http://atrey.karlin.mff.cuni.cz/~vojtech/joystick/">
+      http://atrey.karlin.mff.cuni.cz/~vojtech/joystick/</a><p>
+    </blockquote>
+
+    The Simple Direct-Media Layer and SDL_Mixer libraries (for sound and music)
+    can be downloaded from:<p>
+
+    <blockquote>
+      <a href="http://www.libsdl.org/">http://www.libsdl.org/</a><p>
+    </blockquote>
+  </blockquote>
+
+  <h4>X-Window Icon</h4>
+  <blockquote>
+    If you'd like to add "BoboBot" to, say, "GoodStuff" for FVWM, or set a
+    default icon in WindowMaker, feel free to use the included
+    "bobobot-icon.xpm" image.<p>
+
+    I used this in my ".fvwmrc" file:<p>
+
+    <code>*GoodStuff BoboBot .../bobobot-icon.xpm Exec "BoboBot" exec
+          .../bobobot</code><p>
+
+    Where "..." is the path to the files on this computer.<p>
+
+    I also have this line, which makes the icon appear when I minimize
+    the "BoboBot" game window:<p>
+
+    <code>Style "BoboBot" Icon .../bobobot-icon.xpm</code><p>
+
+    Where "..." is the path to the icon on this computer.<p>
+  </blockquote>
+</blockquote>
+
+<h3>STARTING BOBOBOT</h3>
+<blockquote>
+  To begin a game, run the "bobobot" executable.<p>
+
+  Arguments accepted include:<p>
+  <ul>
+      <li>bobobot <b>some.display:0.0</b><p>
+
+        Open a window on the display specified, instead of the default
+        display (taken from your "<code>DISPLAY</code>" environment
+        variable).<p>
+
+      <li>bobobot --nomusic<p>
+
+        If sound and music are compiled in, this will disable music.
+        You will hear sound effects only.<p>
+
+      <li>bobobot --nosound<p>
+
+        If sound and music are compiled in, this will disable sound effects.
+        You will hear music only.<p>
+
+      <li>bobobot --help<p>
+
+        Show a very brief help screen to remind you how to play,
+        and quit.<p>
+
+      <li>bobobot --version<p>
+
+        Show the version of "bobobot" that you're playing, and the
+        versions of SDL and the joystick driver supported, if they
+        were compiled in.  Then quit.<p>
+  </ul>
+</blockquote>
+
+<h3>THE TITLE SCREEN</h3>
+<blockquote>
+  When you begin a game of BoboBot, after a spending a few moments
+  loading graphics, the "BoboBot" title screen will appear.<p>
+
+  Press [SPACE] or any fire button on your joystick at any time to begin
+  a new game of BoboBot.<p>
+
+  Press [Q] at any time to quit "BoboBot" completely.<p>
+
+  A few different graphics will show up on the title screen, some of which
+  give tips on playing!<p>
+</blockquote>
+
+<h3>THE GAME</h3>
+<blockquote>
+  <h4>Level-Selection Screen</h4>
+  <blockquote>
+    When you start a new game, you'll see the level-selection screen.
+    There are 9 rectangles on the screen (three by three) and a pulsating
+    selection cursor.<p>
+
+    At this screen, you choose which part of the world (hence, which boss)
+    you wish to travel to.<p>
+
+    You can select any of the 8 outer levels.  The center box represents
+    the evil force's level.  You cannot get to that level until you've
+    beaten the 8 other levels.<p>
+
+    Use the [ARROW] keys or the joystick controller to move the selection
+    cursor over the level you wish to play.  Notice that at the bottom the
+    name of the place and the name of the boss appear.  Over the selection
+    cursor, an image of the boss will appear.<p>
+
+    (Note: Once you've beaten a level, you can't go back.  This is
+    represented by the level's box being greyed out and a big red
+    slash going through it.  If you place the selection cursor over it,
+    you'll see the word "DONE" instead of its boss.)<p>
+
+    Press [SPACE], [RETURN] or any fire button to enter that level.  Once
+    there, you can't return to the level-selection screen until you've
+    defeated the entire level!  (Or, of course, if you give up or lose and
+    begin a new game.)<p>
+
+    Press [Q] to give up.  You will be asked if you're sure.  Press [Y]
+    to quit back to the title screen, aborting your game, or [N] to keep
+    playing and remain in the level-selection screen.<p>
+  </blockquote>
+
+  <h4>Game Screen</h4>
+  <blockquote>
+    The game is seen from the side.  You are the little monkey (BoboBot).<p>
+
+    <center>
+    <img src="screenshot.gif" width=240 height=170 alt=""><p>
+    </center>
+
+    <h5>Health</h5>
+    <blockquote>
+      At the upper left is a green health meter.  As you get hurt
+      (by bumping into, or being shot by enemies) your health goes down,
+      the green being replaced by red.  When your health runs out, you
+      lose a life.<p>
+
+      When you've beaten a level and gained a new weapon, whenever that
+      weapon is selected, you'll see it's ammunition meter on the very right
+      of your health meter.  (An image of the weapon will be in the center
+      of this meter.)<p>
+
+      Note: your default weapon is unlimited, so no ammunition meter appears
+      when you have this weapon selected.<p>
+
+      When you've reached the end of a level, and are being faced with the
+      level's evil boss, his/her health meter will be displayed next to
+      your meters.<p>
+    </blockquote>
+
+    <h5>Lives</h5>
+    <blockquote>
+      At the upper right the number of lives you have are displayed.
+      (A number next to a little monkey head.)  You start with 3 lives and
+      when you reach 0, the game is over.<p>
+    </blockquote>
+
+    <h5>Special Screens</h5>
+    <blockquote>
+      As you travel through different environments in the levels, you'll
+      come across the following:<p>
+
+      <ul>
+      <li>Wavey, underwater screens
+      <li>Snowy screens
+      <li>Dark screens, where you can only see the area immediately around
+          your character
+      <li>Flickery screens, where there's a broken lamp which causes the
+          screen to flash between lit (normal) and dark
+      </ul>
+    </blockquote>
+  </blockquote>
+
+  <h4>Moving Around The Screen</h4>
+  <blockquote>
+
+    To move BoboBot, use the arrow keys or the joystick.<p>
+
+    <blockquote>
+      [LEFT]  - Face left, move left<br>
+      [RIGHT] - Face right, move right<p>
+
+      The longer you hold left or right, the faster you run.<p>
+
+      Remember this when you need to jump a long way... you will
+      probably want to get a running start!<p>
+
+      Also know that you can maneuver in mid-air with the [LEFT]
+      and [RIGHT] arrow keys.  Just know that if you turn the
+      other way, or let go of both keys, you'll STOP moving
+      left or right, and just fall straight down!<p>
+    </blockquote>
+
+    To jump, use the [SPACE] key or the [A-Fire] button on your joystick.<p>
+
+    You can only jump when you're standing on a solid surface.<p>
+
+    The longer you hold the jump, the higher you jump.  Sometimes, you
+    DON'T want to hold jump as long as you can.  There are many tricky spots
+    where you'll bump your head if you jump too high, and won't be able to
+    land where you need to (usually falling to your doom).<p>
+  </blockquote>
+
+  <h4>Using Your Weapon(s)</h4>
+  <blockquote>
+    BoboBot can have up to 9 weapons.<p>
+
+    The first is your standard bullet.  You start with this weapon, and
+    never run out of ammunition.<p>
+
+    The other eight weapons are gained as you defeat levels.<p>
+
+    To shoot, press the [Z] key on the keyboard, or the [B-Fire] button
+    on your joystick.<p>
+
+    To go to the weapon-selection screen press the [TAB] key on the
+    keyboard, or the [C-Fire] or [D-Fire] button on your joystick if you have
+    one.<p>
+
+    <center>
+    <img src="weaponselect.gif" width=120 height=112 alt=""><p>
+    </center>
+
+    <blockquote>
+      (NOTE: You can't change weapons, and therefore can't get to the
+      weapon-selection screen, unitl ALL of your bullets are off of
+      the screen!)<p>
+
+      While in the weapon-selection screen, press [UP] and [DOWN] to
+      select a different weapon, and [TAB], [SPACE] or [RETURN] or
+      any fire button to exit the weapon-select screen and return to the
+      game.<p>
+    </blockquote>
+
+    Some weapons are aimable.  If you're not holding any direction,
+    you'll shoot the way you're facing.  Otherwise, aimable weapons will
+    shoot in the direction you're pressing on the arrow keys or the
+    joystick.<p>
+
+    Different weapons have different effects.  Some do damage, others
+    affect enemies in other ways (for example, "Ice Blaster" freezes the
+    enemy for a moment).<p>
+
+    After you've gained a new weapon, if you have a chance, practice with
+    that new weapon to understand how it works.<p>
+
+    Note that some enemies require a different number of shots, depending
+    on what weapon you're using.  Some enemies aren't even affected by
+    some weapons! (Your bullet will ricochet off of them.)<p>
+  </blockquote>
+
+  <h4>Moving Around The Level</h4>
+  <blockquote>
+    You start at the left on the first screen of the level, and maneuver
+    your way through the level one screen at a time.  Usually, you're headed
+    to the right, but sometimes you need to jump up to a screen above,
+    drop down to a screen below, and even go left.<p>
+
+    Often, but not always, you can go back to screens you've already
+    visited.  (Sometimes you just can't reach, and sometimes the game
+    just won't let you go back.)  If you didn't destroy all of the enemies
+    on that screen, they'll be there waiting, so watch out!<p>
+
+    Many screens which aren't solid at the bottom can be quite dangerous.
+    Unless it's OBVIOUS that down is the only way to go, avoid falling to
+    the bottom or you'll die!<p>
+
+    Some screens are "Checkpoints".  If you die, you'll be returned to
+    a checkpoint screen (rather than going all the way to the beginning
+    of the level).<p>
+  </blockquote>
+
+  <h4>Upgrades and Other Goodies</h4>
+  <blockquote>
+    When you destroy enemies, sometimes a "goody" pops out.<p>
+
+    Grab them quickly, because they disappear after a few moments.<p>
+
+    Note: Some screens (usually secret ones that you have to look for)
+    already have "goodies" on them.  They don't disappear until you pick
+    them up.  But, once you grab them, you can't go back to the screen and
+    get them again!<p>
+
+      <ul>
+      <li><img src="banana-small.gif" width=32 height=32 alt="" align=right>
+          Banana<br>
+          Gives you a little health.  (About 8%)<p><br clear=all>
+      <li><img src="banana-big.gif" width=32 height=32 alt="" align=right>
+          Bunch of Bananas<br>
+          Gives you a lot of health.  (About 40%)<p><br clear=all>
+      <li><img src="bolt-small.gif" width=32 height=32 alt="" align=right>
+          Little Bolt<br>
+          Gives you a little more ammunition for
+          THE CURRENTLY SELECTED WEAPON.  (About 8%)<p><br clear=all>
+      <li><img src="bolt-big.gif" width=32 height=32 alt="" align=right>
+          Nut and Bolt<br>
+          Gives you a lot of ammunition for
+          THE CURRENTLY SELECTED WEAPON.  (About 40%)<p><br clear=all>
+      <li><img src="oneup.gif" width=32 height=32 alt="" align=right>
+          Monkey Head<br>
+          "One-Up!"  It's an extra life!<p><br clear=all>
+      <li>???<br>
+          SOME secret screens have "goodies" not listed
+          here! Sometimes you've even got to figure out
+          HOW to get them! Good luck!<p>
+      </ul>
+
+    If you grab a goodie and it has an affect (for example, your health
+    gets increased because it wasn't at 100% and you grabbed a banana),
+    you will hear a sound and the goody will fly up to the appropriate
+    status display on the screen.  (For example, a banana would fly up to
+    the upper left, where your health meter is.)<p>
+
+    If the goody has no effect (for example, you grab a banana but your
+    health is already at 100%, or you grab a bolt, but the weapon you
+    have selected is the normal bullet gun), the goody will drop off the
+    bottom of the screen quietly.<p>
+  </blockquote>
+
+  <h4>Defeating Bosses</h4>
+  <blockquote>
+    At the end of each level is the level's boss.  Some tips to defeating
+    bosses are:<p>
+
+      <ul>
+      <li>Try to make sure your health is full before you fight a boss.
+      <li>Try to make sure your weapons are full, too.
+      <li>Watch the pattern of movement and shooting the boss has.
+      <li>Notice how the boss reacts to you.  Use this knowledge to your
+         advantage!
+      <li>Stay CALM!
+      </ul><p>
+
+    Some bosses are better fought against with different weapons.<p>
+
+    Here's a really big hint!<p>
+
+      <ul>
+      <li>Defeat "The Mummy" of Egypt before you try to defeat
+          "Chronoman" of Switzerland!
+      </ul><p>
+
+    Eventually, you'll find your own preference of who to beat first,
+    and with practice, you'll whip through the levels very quickly!<p>
+  </blockquote>
+</blockquote>
+
+<h3>CREDITS</h3>
+
+<blockquote>
+  <table border=1 cellspacing=0 cellpadding=2>
+  <tr><td valign=top><font face="Arial,Helvetica">Concept:</font></td>
+  <td valign=top><font face="Arial,Helvetica">Bill Kendrick, Melissa Hardenbrook</font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Graphics:</font></td>
+  <td valign=top><font face="Arial,Helvetica">Bill Kendrick, Marianne Waage,
+  Melissa Hardenbrook</font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Software:</font></td>
+  <td valign=top><font face="Arial,Helvetica">Bill Kendrick</font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Sound effects:</font></td>
+  <td valign=top><font face="Arial,Helvetica">Bill Kendrick and others
+  (WAV's and AU's downloaded from many sound archives)</font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Music:</font></td>
+  <td valign=top>
+    <table border=1 cellspacing=0 cellpadding=2 width=100%>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Title screen:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+      "Welcome Home" by "Lizardking" of Alcatraz<br>
+      Gustaf Grefberg, 1993. Used with permission.<br>
+      <a href="mailto:gustaf.grefberg@pp.itv.se">gustaf.grefberg@pp.itv.se</a>
+      <br>
+      <a href="http://www.itv.se/~a1055/">http://www.itv.se/~a1055/</a>
+    </font></td></tr>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Antarctic:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+    "Ambient Power" by Vogue of Triton<br>
+    Magnus Hogdahlnd, 1993</font></td></tr>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Egypt:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+    "Crystal Orbit" by ???</font></td></tr>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Switzerland:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+    "Crystal Starlight" by ???</font></td></tr>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Grand Canyon:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+    "Bombtrack" by Amathiew Berthaud 1994</font></td></tr>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Final Level:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+    "Zak-zaka-zak-zak" by Purple Motion 1994</font></td></tr>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Level select:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+    "Walk'n Titanize" by Dizzy of CNCD<br>
+    Juha Kujanpaa, 1993. Used with permission.<br>
+    <a href="mailto:jtkujanp@itu.cc.jyu.fi">jtkujanp@itu.cc.jyu.fi</a><br>
+    <a href="http://www.jyu.fi/~jtkujanp/">http://www.jyu.fi/~jtkujanp/</a>
+    </font></td></tr>
+
+    <tr><td valign=top><font face="Arial,Helvetica">Bosses:</font></td>
+    <td valign=top><font face="Arial,Helvetica">
+    "Belewian" by Dizzy of CNCD 1994. Used with permission.</font></td></tr>
+    </table>
+  </td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Patches:</font></td>
+  <td valign=top><font face="Arial,Helvetica">
+  Dennis Payne for recoding the keyboard routines more efficiently.<p>
+  </font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Thanks to:</font></td>
+  <td valign=top><font face="Arial,Helvetica">
+  Sam Lantinga for writing and supporting SDL.<p>
+  Vojtech Pavlik for writing and supporting joystick driver.<p>
+  </font></td></tr>
+
+  </table><p>
+
+  (c) 1998-1999 New Breed Software<p>
+</blockquote>
+
+<h3>CONTACT</h3>
+<blockquote>
+  Comments, questions, suggestions and DONATIONS accepted!<p>
+
+  <table border=1 cellspacing=0 cellpadding=2>
+
+  <tr><td valign=top><font face="Arial,Helvetica">E-mail:</font></td>
+  <td valign=top><font face="Arial,Helvetica">
+<a href="mailto:bobobot@newbreedsoftware.com">bobobot@newbreedsoftware.com</a>
+  </font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Website:</font></td>
+  <td valign=top><font face="Arial,Helveitca"><a href="http://www.newbreedsoftware.com/bobobot/">http://www.newbreedsoftware.com/bobobot/</a></font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Phone:</font></td>
+  <td valign=top><font face="Arial,Helvetica">1-530-759-1019</font></td></tr>
+
+  <tr><td valign=top><font face="Arial,Helvetica">Postal:</font></td>
+  <td valign=top><font face="Arial,Helvetica">Attn: Bobobot<br>
+             New Breed Software<br>
+             c/o Bill Kendrick<br>
+             919 Drake Drive #147<br>
+             Davis, California 95616-0838<br>
+             USA
+  </td></tr>
+  </table>
+  
+</blockquote>
+
+</font>
+</td></tr></table>
+
+</body></html>

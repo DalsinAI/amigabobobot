@@ -1,0 +1,406 @@
+0:
+----------
+-`'-------
+----------
+----`'---`
+-------/\-
+--(*)-#[]\
+/\-|-/[[]]
+SSSSSSSSSS
+-1 1 -1 -1
+1
+Egypt
+5 7 6
+END
+
+1:
+---------B
+-`'-----BB
+-----/\BBB
+'---/[BBBB
+---/[BBBBB
+--/[66bbeb
+\/[666bbbb
+SSSSSSSSSS
+0 2 -1 -1
+1
+.
+3 6 2
+3 7 1
+3 8 0
+END
+
+2:
+BB--------
+BBB-------
+BBBB---`'-
+BBBBB-----
+BBBBBB----
+bbbfbb6--/
+bbbbbb66/S
+SSSSSSSSSS
+1 3 -1 -1
+1
+.
+1 2 5
+END
+
+3:
+-----(*)--
+`'----|---
+--/\--|---
+-/[]\-|SSS
+/[[SSSSSSS
+[SSSSSSSSS
+SSSSSSsssS
+SSSSSSsssS
+2 4 -1 -2
+1
+.
+5 8 0
+5 5 0
+END
+
+4:
+----------
+-----(*)`'
+--`'--|---
+SSsssssSSS
+SSsssssSSS
+SSsssssSSS
+SSsssssSSS
+SSsssssSSS
+3 5 -1 -2
+1
+.
+END
+
+5:
+-|-----BBB
+-|----BBBB
+-|---66BBB
+SSSSSbbSSS
+SSSSSSbbSS
+SSSsSSSbbb
+SSSsSSSSbb
+SSSsSSSSSS
+4 7 6 -1
+1
+.
+END
+
+6:
+----------
+XXXXXXXXXX
+XXXXXXXXXX
+XXXXXXXXXX
+X--------B
+X*)`'---`B
+#####----B
+-|----`#BB
+-1 -1 -1 5
+1
+A secret place!
+100 2 5
+END
+
+7:
+BBBbbBBBBB
+BBBbBBBBBB
+BBBbbbBBBB
+SSSSbbSSSS
+SSSSbSSSSS
+bbbbbfebbb
+bbbbbbbbbb
+SSSSSSSSSS
+5 9 8 -1
+D3
+.
+3 8 6
+3 9 6
+END
+
+8:
+BBBBBBBBBB
+BbbbbbbbbB
+BbbbbbbbbB
+Bbbbb66ebB
+BbbfbbbbbB
+BbbbbbbbbB
+BbbbbbebbB
+BBBbbBBBBB
+-1 -1 -1 7
+D3
+A secret place!
+101 5 2
+101 6 2
+3 1 1
+END
+
+9:
+BBBBBBBBBB
+BBBBBBBBBB
+BBBBBBBBBB
+SSSSSSSSSS
+SSbbebbbbb
+bbbbbSSssS
+bbfbSSSssS
+SSSSSSSssS
+7 12 -1 10
+D3
+.
+3 6 5
+END
+
+10:
+SSSSSSSssS
+SSSSSSSssS
+SSSSSSSssS
+SSSSSSSssS
+SSSSSSSbbS
+BBBBBBBbbB
+Bebbbbbbbb
+BBBBBBBBBB
+-1 11 9 -1
+D3
+Aaggh!
+END
+
+11:
+SSBBBBBbfS
+SSBbbbBbBS
+SSBbbbBbbS
+SSBbbbBBbS
+SSBbbb6bbS
+BBBbBbBBBB
+bbbbbbbbbB
+BBBBBBBBBB
+10 -1 12 -1
+D3
+A secret place!
+100 4 1
+END
+
+12:
+BBBBBBBBBB
+BBBBBBBBBB
+BBBBBBBBBB
+SSSSSSSSSS
+bbbbbbbbbb
+SSSSSSSSSS
+SSSSSSSbff
+SSSSSSSbfS
+9 13 -1 11
+D3
+.
+END
+
+13:
+BBBBB-----
+BBBBBB`'--
+BBBBBBB---
+SSSSSSSS--
+bbbbbbebbb
+bbbbbbbbbb
+bbbbbbbbbB
+SSSSSSSSSS
+-1 14 -1 -1
+C1
+Checkpoint!
+3 8 5
+END
+
+14:
+--------X-
+------`'X-
+-`'-----X-
+--------X-
+bbBBBBBBBB
+bBBefefefB
+BBBbbbbbbB
+SSSSSSSSSS
+13 15 -1 -1
+1
+.
+1 4 2
+END
+
+15:
+------X---
+------X---
+------X---
+-----###--
+BBBBBBBBBB
+BBBBBBBSSS
+BBBBSSSsSS
+SSSSSSSSSS
+14 16 -1 -1
+1
+.
+END
+
+16:
+----------
+---------#
+----------
+---#######
+BBBBBBBBBB
+SSSSSSSSSS
+SSSSSSSSSS
+SSSSSSSSSS
+15 17 -1 -1
+1
+.
+5 8 2
+3 9 0
+END
+
+17:
+----------
+###-`'----
+----------
+##########
+BBBssSSSSS
+SSSssSSSSS
+SSSssSSSSS
+SSSssSSSsS
+16 18 -1 -1
+1
+.
+1 3 1
+1 5 2
+1 7 1
+1 9 2
+END
+
+18:
+----------
+-`#WWWWWWW
+--#wwwwwww
+###wwwwwww
+SS##wwwwww
+SS#wwwwwww
+SS#wwww#ww
+SS#SSSSSSS
+17 19 -1 -1
+4
+.
+4 9 6
+END
+
+19:
+----------
+WWWWWWWWWW
+wwwwwwwwww
+w##www##ww
+w#wwwww#ww
+w#wwwww#ww
+w#wwwww###
+SSVVVVV###
+18 20 -1 -2
+u4
+.
+4 9 3
+4 7 5
+END
+
+20:
+----------
+WWWWWW#--`
+wwwwww####
+wwwwww#...
+wwwwww#WWW
+wwwwwwwwww
+##########
+##########
+19 21 -1 -1
+4
+.
+4 9 5
+END
+
+21:
+----------
+'--------/
+##########
+..........
+WWWW#.....
+wwww#.....
+##########
+#####BBBBB
+20 23 22 -1
+C4
+Checkpoint!
+END
+
+22:
+----------
+----------
+----------
+`'--------
+--BBBB-`'-
+----------
+----------
+#########-
+-1 -1 -1 21
+M
+MARIO x 1
+END
+
+23:
+----------
+\-`'------
+##----`'--
+.#\-`'----
+.#]\---(*)
+..]]\---|-
+##BBBBBBBB
+BBBBBBBBBB
+21 24 -1 -1
+1
+.
+5 8 4
+END
+
+24:
+----------
+---`'--(*)
+`'------|-
+---/\---|-
+--/BBBBBBB
+-/[6ebbbbb
+BBBBBBBBBB
+BBBBBBBBBB
+-1 25 -1 -1
+1
+.
+END
+
+25:
+--BBBBBBBBB
+--Bbbbbbbbb
+--Bbbbbbbbb
+--Bbbbbbbbe
+BBBbbbbbbbb
+bbbbbBSssSB
+BBBBBBSssSB
+BBBBBBSssSB
+24 26 -1 -2
+C1
+Uh oh! The Mummy!
+END
+
+26:
+BBBBBBBbbb
+bbbbbbbbbb
+bbbBbbbBbb
+bbbbbebbbb
+bebbf6fbeb
+bbbbbebbbb
+BBBBBBBBBB
+BBBBBBBBBB
+-1 -1 -1 -1
+DB3
+.
+-2 7 0
+END

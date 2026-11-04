@@ -1,0 +1,61 @@
+Installing BoboBot:
+------------------------------------------------------------------------------
+
+To install BoboBot, you'll need X-Window (X11) libraries installed.
+To compile...
+
+  * WITHOUT sound or joystick support:
+
+    make
+
+
+  * WITH JOYSTICK support, you'll need a joystick driver installed.
+    If your distribution of Linux doesn't come with joystick support,
+    try Vojtech Pavlik's excellent Linux Joystick Driver.  It can be
+    downloaded from:
+
+      http://atrey.karlin.mff.cuni.cz/~vojtech/joystick/
+
+    Just add "JOY=YES" to the "make" command:
+
+      make JOY=YES
+
+
+  * WITH SOUND support, you'll need the Simple DirectMedia layer (SDL)
+    libraries, and SDL_Mixer.  They can be downloaded from:
+
+      http://www.libsdl.org/
+
+    Add "SOUND=YES" to the "make" command:
+
+      make SOUND=YES
+
+
+  * WITH MUSIC (and therefore SOUND) support, add "MUSIC=YES" to the
+    "make" command:
+
+      make MUSIC=YES
+
+
+If you wish to have BoboBot installed in a directory other than the
+current directory, you can specify it with "INSTALLROOT".  If you
+wish the datafiles to be placed in a location other than the directory
+specified by "INSTALLROOT", you can specify it with "DATA"...
+
+  make INSTALLROOT=/usr/bin DATA=/usr/local/bobobot
+
+
+If you have problems compiling because "make" or your C compiler can't
+find the appropriate libraries, you can specify them as well.  The defaults
+are:
+
+  X11_PREFIX=/usr/X11
+  SDL_PREFIX=/usr/local
+
+
+If you still have problems installing or running BoboBot, please report it
+to me using "BugTrack":
+
+  http://www.newbreedsoftware.com/bugtrack/
+
+------------------------------------------------------------------------------

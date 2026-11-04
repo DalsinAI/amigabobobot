@@ -1,0 +1,350 @@
+0:
+QQQQQQQQQQ
+Q`'QQQQQQQ
+QQQQQQQQQQ
+QQQQQQ`'QQ
+<=====>QQQ
+IIIIIII<==
+IIIIIIIIII
+WWWWWWWWWW
+-1 1 -1 -1
+S
+Antarctica
+0 6 5
+END
+
+1:
+QQQQQQQQQQ
+QQQQQQQQQQ
+QQQ`'QQQQQ
+QQQQQQQQQQ
+QQQQQQQQQQ
+===>QQ<===
+IIIIQQIIII
+WWWWWWWWWW
+0 2 -1 -2
+S
+.
+4 9 7
+END
+
+2:
+QQQQQQQQQQ
+QQQQ`'QQQQ
+QQQQQQQQQQ
+QQQQQQQ`'Q
+QQQQQQQQQQ
+===>QQQQ<=
+IIIIQQQQII
+WWWWWWWWWW
+1 3 -1 -2
+S
+.
+1 5 4
+7 9 0
+END
+
+3:
+QQQQQQ#+##
+QQQQQ`####
+QQQQQQQQ..
+QQQQQQQQ..
+QQQQQQQQ..
+===>QQQQ..
+IIIIQQQIII
+WWWWWWWIII
+2 4 -1 -2
+S
+.
+2 8 2
+END
+
+4:
+####%##+##
+#+########
+..........
+..........
+..........
+..........
+IIII...III
+IIIIWWWIII
+3 5 -1 -2
+.
+.
+2 5 2
+END
+
+5:
+#..+##..##
+##########
+..........
+..........
+..........
+......####
+IIII..X...
+IIIIWWWWWW
+4 6 -1 -2
+.
+.
+1 3 5
+4 9 7
+END
+
+6:
+##.....###
+##.....###
+..........
+..........
+..........
+###...####
+..X...X...
+WWWWWWWWWW
+5 7 -1 -2
+.
+.
+1 3 5
+2 8 2
+END
+
+7:
+#..##.....
+####+.....
+..........
+..........
+.....#...I
+###..X...I
+..X..X...I
+WWWWWWWWWW
+6 8 -1 -2
+.
+.
+END
+
+8:
+#######QQQ
+......Q`'Q
+......QQQQ
+......QQQQ
+II....<===
+IIII..IIII
+IIII..IIII
+WWWWWWIIII
+7 9 -1 -2
+S
+.
+1 8 2
+END
+
+9:
+QQQQQQQQQ#
+QQQ`'QQQQ#
+QQQ####`'#
+QQQ+..#QQ#
+==>I..I<==
+IIII..IIII
+IIII..IIII
+IIII..IIII
+8 -1 -1 10
+CS
+A way in!
+5 5 1
+END
+
+10:
+IIII..IIII
+IIII..IIII
+IIII..IIII
+IIII......
+IIII......
+IIII<=====
+IIIIIIIIII
+IIIIIIIIII
+-1 11 -1 -1
+.
+.
+0 7 4
+END
+
+11:
+IIIIIIIIII
+IIIIIIIIII
+IIIIIIIIII
+.........I
+.........I
+=====>WWWI
+IIIIIIwwwI
+IIIIIIwwwI
+10 -1 -1 12
+4
+Time to swim!
+2 5 3
+END
+
+12:
+IIIIIIwwwI
+Iwwwwwwwww
+Iwwwwwwwww
+Iwwwwwwwww
+Iwwwwwwwww
+Iwwwwwwwww
+Iwwwwwwwww
+IIIIIIIIII
+-1 13 -1 -1
+4
+.
+4 3 5
+7 9 2
+END
+
+13:
+IIIIIIIIII
+wwwwwwwwww
+wwwwwwwwww
+wwwwwwwwww
+wwwwwwwwww
+wwwwwwwwww
+wwwwwwwwww
+IIIIIIIIII
+12 14 -1 -1
+4
+.
+4 8 3
+4 7 5
+4 9 6
+END
+
+14:
+IIIIIIIII#
+wwwwwwwww#
+wwwww#####
+wwwww#....
+wwwww#WWWW
+wwwww#wwww
+wwwwwwwwww
+IIIII#####
+13 15 -1 -1
+4
+.
+4 9 1
+END
+
+15:
+##########
+..#%#....#
+..###....+
+.........+
+WWWWWWWWW#
+wwwwwwwww#
+wwwwwwwww#
+##########
+14 16 -1 -1
+4
+.
+4 8 6
+END
+
+16:
+##########
+#         
+          
+          
+##########
+##%%%%%%##
+#######+##
+IIIIIIIIII
+15 17 -1 -1
+.
+.
+0 8 3
+END
+
+17:
+####    ##
+     #   #
+        ##
+         #
+##########
+#%#%#%#%#I
+########II
+IIIIIIIIII
+16 -1 18 -1
+.
+.
+0 8 1
+END
+
+18:
+#     ####
+#   #    #
+#        #
+#      ###
+#  I   #%#
+#      ###
+#        #
+####     #
+-1 -1 19 17
+.
+.
+END
+
+19:
+#IIIIIIIII
+#         
+#     IIII
+###      #
+#%#I     #
+####     #
+#        #
+#     ####
+-1 20 -1 18
+.
+.
+2 7 3
+END
+
+20:
+IIIIIIIIII
+          
+III       
+##II      
+I#III     
+I#IIIIIIII
+I#########
+IIIIIIIIII
+19 21 -1 -1
+.
+.
+2 4 1
+2 7 1
+2 8 1
+0 8 4
+END
+
+21:
+IIIIIIIIII
+          
+          
+          
+          
+III       
+#####     
+IIII######
+-1 22 -1 -1
+C
+Uh oh!  Freeze-Man!
+END
+
+22:
+IIIIIIIIII
+ II      #
+       I #
+    I    #
+  II  I  #
+         #
+         #
+##########
+-1 -1 -1 -1
+B
+.
+-1 8 4
+END

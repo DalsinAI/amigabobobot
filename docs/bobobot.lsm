@@ -1,0 +1,16 @@
+Begin3
+Title:		BoboBot
+Version:	Alpha 3 (Preview Release 2)
+Entered-date:	1999-March-16
+Description:	BoboBot is a one-player game that falls into the "platform," or
+		"run-and-jump" genre. Travel to eight levels to.  After you've
+		fought your way past screenfuls of enemies and obstacles, you
+		must beat the "boss" of the level.  Upon doing so, you gain
+		a new weapon.
+Keywords:	X11,game,megaman,platform,arcade,capcom
+Author:		bobobot@newbreedsoftware.com (Bill Kendrick)
+Maintained-by:	bobobot@newbreedsoftware.com (Bill Kendrick)
+Primary-site:	ftp.sonic.net pub/users/nbs/unix/x/bobobot/
+		1516Kb bobobot-preview2.tar.gz
+Copying-policy:	Freeware
+End

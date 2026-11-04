@@ -1,0 +1,12 @@
+CHANGES for BoboBot
+
+Preview 3
+2000.Nov.30
+
+
+Changes Since Preview 2
+-----------------------
+* License changed to GPL
+* Documentation converted to HTML
+* BoboBot now wears 'hats'
+* Fixed up for newer versions of SDL and SDL_Mixer
