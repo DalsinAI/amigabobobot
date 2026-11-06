@@ -1,0 +1,62 @@
+{
+  "drawer": "BoboBot",
+  "drawer_icon": "amiga/icons/BoboBot-drawer.info",
+  "archive": "bobobot-{version}-68040",
+  "members": [
+    {
+      "name": "bobobot",
+      "build": "bobobot",
+      "check": "executable_sha256"
+    },
+    {
+      "name": "Libs/acgame.library",
+      "build": "acgame.library",
+      "check": "acgame_library_sha256"
+    },
+    {
+      "name": "",
+      "tar": "drawer.tar"
+    }
+  ],
+  "aminet": [
+    [
+      "Short",
+      "BoboBot, platform shooter, 68040+FPU"
+    ],
+    [
+      "Author",
+      "Andreas Schmid (upstream); Amiga port: AmiCradle Team"
+    ],
+    [
+      "Uploader",
+      "AmiCradle Team"
+    ],
+    [
+      "Type",
+      "game/actio"
+    ],
+    [
+      "Version",
+      "{version}"
+    ],
+    [
+      "Requires",
+      "AmigaOS 3.x, 68040/68060 with FPU, AGA or RTG, AHI"
+    ],
+    [
+      "Architecture",
+      "m68k-amigaos >= 3.0"
+    ]
+  ],
+  "root": [
+    {
+      "name": "Install-BoboBot",
+      "repo": "package/installer/Install-BoboBot",
+      "installer": true
+    },
+    {
+      "name": "Install-BoboBot.info",
+      "repo": "package/installer/Install-BoboBot.info"
+    }
+  ]
+}

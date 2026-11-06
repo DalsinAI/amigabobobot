@@ -2,7 +2,9 @@
 #
 #   make -f amiga/Makefile.amigaos STOVE=/path/to/openamigagcc-16.2.0-open4-x86_64-linux \
 #        NDK=/path/to/gfopensdk/OpenNDK/Include_H \
-#        ACSDL=/path/to/amicradle-guest/gameports/acsdl12
+#        ACSDL=/path/to/amicradle-guest/gameports/acsdl12 \
+#        ACSDLLIB=/path/to/acsdl12/build ACGAME=/path/to/acgame \
+#        ACGAMELIB=/path/to/acgame/build-amiga
 #
 # STOVE is GFOpenAmigaGCC 16.2.0-open4 or later. ACSDL is acsdl12, built with
 # its own Makefile.amigaos (its library holds zlib's inflate, so ZLIB is
@@ -12,13 +14,18 @@
 # comes through xsdl). The pictures are amiga/images, made from images/ by
 # amiga/convert_gfx.py; zak.mod is amiga/mods/zak.mod, made from the S3M
 # by amiga/s3m2mod.py.
+# acsdl12 is built with ACG= into ACSDLLIB, without its own copy of ACGame:
+# the game gets ACGame from acgame.library, through ACGAMELIB's libacgame.a
+# (DalsinAI/acgame's stubs). package/acgame-deps.sh builds both.
 # Output: build/amigaos/BoboBot/ with the program, its data drawers, the
 # HTML manual, the ReadMe and licence, and the icons; BoboBot.info beside it.
 
 STOVE   ?= $(HOME)/CradleLab/toolchain/openamigagcc-16.2.0-open4-x86_64-linux
 NDK     ?= $(HOME)/CradleLab/gfopensdk/OpenNDK/Include_H
 ACSDL   ?= $(HOME)/CradleLab/guest-sdl/gameports/acsdl12
+ACSDLLIB ?= $(ACSDL)/build/amigaos
 ACGAME  ?= $(ACSDL)/../acgame
+ACGAMELIB ?= $(ACGAME)/build-amiga
 ZLIB    ?= $(HOME)/CradleLab/zlib-1.3.1
 CC      = $(STOVE)/bin/m68k-amigaos-gcc
 CPU     ?= -m68040 -m68881
@@ -46,7 +53,7 @@ ICONS   = amiga/icons/BoboBot-drawer.info amiga/icons/bobobot.info amiga/icons/R
 all: $(OUT)/bobobot
 
 $(OUT)/bobobot: $(OBJS) $(ICONS) AMIGA_PORT.md | $(OUT)
-	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(ACSDL)/build/amigaos/libacsdl12.a -lm
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(ACSDLLIB)/libacsdl12.a $(ACGAMELIB)/libacgame.a -lm
 	mkdir -p $(DIRS:%=$(OUT)/%)
 	cp amiga/images/*.ppm images/dark.xbm $(OUT)/images/
 	cp sounds/*.wav $(OUT)/sounds/
