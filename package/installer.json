@@ -1,0 +1,13 @@
+{
+  "name": "BoboBot",
+  "version": "0.0-amiga2",
+  "drawer": "BoboBot",
+  "program": "bobobot",
+  "cpu": "68040",
+  "fpu": true,
+  "space": 8000000,
+  "modules": [],
+  "keep": [],
+  "parent": "Work:Games",
+  "badge": "../amiga/icons/art/bobobot.png"
+}
