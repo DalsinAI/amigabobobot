@@ -48,7 +48,7 @@ UPSTREAM_W = -Wno-unused-but-set-variable
 
 DIRS    = images sounds levels mods docs
 ICONS   = amiga/icons/BoboBot-drawer.info amiga/icons/bobobot.info amiga/icons/ReadMe.info \
-          amiga/icons/COPYING.info $(DIRS:%=amiga/icons/%.info)
+          amiga/icons/COPYING.info
 
 all: $(OUT)/bobobot
 
@@ -63,8 +63,7 @@ $(OUT)/bobobot: $(OBJS) $(ICONS) AMIGA_PORT.md | $(OUT)
 	cp docs/* $(OUT)/docs/
 	cp AMIGA_PORT.md $(OUT)/ReadMe
 	cp COPYING $(OUT)/COPYING
-	cp amiga/icons/bobobot.info amiga/icons/ReadMe.info amiga/icons/COPYING.info \
-	   $(DIRS:%=amiga/icons/%.info) $(OUT)/
+	cp amiga/icons/bobobot.info amiga/icons/ReadMe.info amiga/icons/COPYING.info $(OUT)/
 	cp amiga/icons/BoboBot-drawer.info $(BUILD)/BoboBot.info
 
 $(BUILD)/%.o: src/%.c $(wildcard src/*.h) $(XHDRS) | $(BUILD)
